@@ -129,7 +129,7 @@ app.delete('/flights/:id', (request, response) =>{
 
 
 
-
+//specifying our port number
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
