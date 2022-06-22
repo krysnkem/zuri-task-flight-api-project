@@ -4,13 +4,10 @@ const express = require("express");
 const flights = require("./flights.json");
 //import the filesystem module
 const fs = require('fs');
-
-
 //the app interface from express
 const app = express();
 
 const { json } = require("express");
-// const flights = require("./controllers/flightController");
 const routes = require("./routes/flightRoute");
 
 
@@ -18,9 +15,6 @@ const routes = require("./routes/flightRoute");
 //specifying the middleware
 app.use(json());
 app.use("/", routes);
-
-
-
 
 
 

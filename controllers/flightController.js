@@ -37,7 +37,6 @@ exports.bookFlight = (request, response)=>{
     if(err) return response.status(500).json({message:err})
   })
   console.log({flights})
-  console.log(fm.flightsModel)
   return response.status(200).json({message:"new flight details created successfully!"})
 
 }
