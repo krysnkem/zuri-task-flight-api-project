@@ -22,6 +22,12 @@ exports.bookFlight = (request, response)=>{
   if(duplicateIdIndex != -1){
     return response.status(400).json({message:`flight with this id: ${newFlight.id} already exists`})
   }
+  //if the newFlight id is greater than the id of the last flight on the flights.json then
+  //tel lthe user to use the required id
+  const idOfLastFlight = flights[flights.length-1].id
+  if(newFlight.id > (idOfLastFlight + 1) ){
+    return response.status(400).json({message: `the id of this flight details is not ideal, use the id ${idOfLastFlight + 1}`})
+  }
   //add new flight to flights array
   flights.push(newFlight)
   //stringify the updated flight array
@@ -63,6 +69,8 @@ exports.deleteFlight = (request, response) =>{
     })
     return response.status(200).json({message:"flight deleted successfully"})
 
+  }else{
+    return response.status(404).json({message:"flight not found"})
   }
     
 }
