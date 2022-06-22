@@ -24,8 +24,11 @@ app.post('/flights', (request, response)=>{
   if(duplicateIdIndex != -1){
     return response.status(400).json({message:`flight with this id: ${newFlight.id} already exists`})
   }
+  //add new flight to flights array
   flights.push(newFlight)
+  //stringify the updated flight array
   const stringData = JSON.stringify(flights, null, 2);
+  //overwrite the flight.json with the updated-stringified array
   fs.writeFile('flights.json', stringData, (err)=>{
     if(err) return response.status(500).json({message:err})
   })
@@ -58,9 +61,10 @@ app.get('/flights/:id', (request, response)=>{
 
 //4. Update/Edit Flight
 app.put('/flights/:id', (request, response)=>{
-  //get the id of the target flight from the request body
+  //get the id of the target flight from the request body and the new flight object
   const id = request.params.id
   const newFlight = request.body.newFlight
+  //check that the route id matches that of the new flight object
   if(String(id) !== String(newFlight.id)){
     return response.status(400).json({message:"route id does not match flight id"})
   }
