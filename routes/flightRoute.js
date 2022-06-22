@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/flightController');
 const { json } = require("express");
-router.use(json())
+// router.use(json())
 router.get('/', controller.example)
 //1. Book a flight
 router.post('/flights', controller.bookFlight )
