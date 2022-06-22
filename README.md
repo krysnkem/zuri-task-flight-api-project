@@ -10,9 +10,9 @@ With this API, you can :
 
 Additionional Features
 1. When creating new flight    
-    => Checks whether there is an already existing flight with that id
+    => Checks for an already existing flight with that id
 2. When updating a flight  
-    => Checks whether the flight id matches the request id
+    => Checks if flight id matches the request id
 
 To create a new flight, test with this:
 
