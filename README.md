@@ -9,7 +9,7 @@ With this API, you can :
 5. Delete Flight
 
 Additionional Features
-1. When creating new flight, 
+1. When creating new flight    
     => Checks whether there is an already existing flight with that id
 2. When updating a flight  
     => Checks whether the flight id matches the request id varible
