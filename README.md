@@ -12,7 +12,7 @@ Additionional Features
 1. When creating new flight    
     => Checks whether there is an already existing flight with that id
 2. When updating a flight  
-    => Checks whether the flight id matches the request id varible
+    => Checks whether the flight id matches the request id
 
 To create a new flight, test with this:
 
