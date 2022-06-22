@@ -14,14 +14,14 @@ Additionional Features
 2. When updating a flight
     => Checks whether the flight id matches the request id varible
 
-To create a new flight, test with this
+To create a new flight, test with this:
 
-{
-    "id": 4,  
-    "title": "flight to Chicago",  
-    "time": "2am",  
-    "price": 32000,  
-    "date": "27-07-2022"  
-}
+    {
+        "id": 4,  
+        "title": "flight to Chicago",  
+        "time": "2am",  
+        "price": 32000,  
+        "date": "27-07-2022"  
+    }
 
 If you get a respone that the id already exist, then change the 'id' to a higher value
