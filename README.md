@@ -7,3 +7,10 @@ With this API, you can :
 3. Get a single Flight
 4. Update/Edit Flight
 5. Delete Flight
+
+Additionional Features
+1. When creating new flight,
+    => Checks whether the flight id matches the request id varible
+    => Checks whether there is an already existing flight with that id
+2. When updating a flight
+    => Checks whether the flight id matches the request id varible
