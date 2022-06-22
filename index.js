@@ -1,11 +1,14 @@
+//import express module
 const express = require("express");
-const flights = require("./flights.json")
+//import the flights.json
+const flights = require("./flights.json");
+//import the filesystem module
 const fs = require('fs');
 
 
-
+//the app interface from express
 const app = express();
-
+//specifying the middleware
 app.use(express.json());
 
 
@@ -34,13 +37,15 @@ app.post('/flights', (request, response)=>{
   })
   console.log({flights})
   return response.status(200).json({message:"new flight details created successfully!"})
-})
+});
+
 
 //2. Get all Flight
 app.get('/flights', (request, response)=>{
   //get all fights in flights.json and return the whole file as a response
   return response.status(200).json(flights)
-})
+});
+
 
 //3. Get a single Flight
 app.get('/flights/:id', (request, response)=>{
@@ -52,12 +57,15 @@ app.get('/flights/:id', (request, response)=>{
   const index = flights.findIndex((flight)=>{
     return String(flight.id) === id
   })
+  //if a flight object with the this id exists, then return the object as a response
+  //else return the response that file is not found
   if(index != -1){
     return response.status(200).json(flights[index])
   }else{
     return response.status(404).json({message: "flight not found"})
   }
-})
+});
+
 
 //4. Update/Edit Flight
 app.put('/flights/:id', (request, response)=>{
@@ -90,7 +98,9 @@ app.put('/flights/:id', (request, response)=>{
   }
  
 
-})
+});
+
+
 //5. Delete Flight 
 app.delete('/flights/:id', (request, response) =>{
   //get the id from the request body
