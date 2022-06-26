@@ -25,3 +25,5 @@ To create a new flight, test with this:
     }
 
 If you get a respone that the id already exist, then change the 'id' to a higher value
+========================================
+This api is now hosted on heroku at https://flights-booking-api.herokuapp.com/
