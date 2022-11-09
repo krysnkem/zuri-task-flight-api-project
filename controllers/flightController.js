@@ -15,7 +15,7 @@ exports.bookFlight = async (request, response) => {
   const newFlight = request.body.newFlight;
   //check for duplicate id
   const duplicateIdIndex = flights.findIndex((flight) => {
-    return String(inewFlight.id) == flight.id;
+    return newFlight.id == flight.id;
   });
   //if there is already a flight with this id return a messag that the flight id already exists
   if (duplicateIdIndex != -1) {
